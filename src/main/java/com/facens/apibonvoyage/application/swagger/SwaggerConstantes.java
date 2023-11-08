@@ -51,7 +51,7 @@ public class SwaggerConstantes {
     public static final String ESTADO_HOTEL_EXEMPLO = "São Paulo";
 
     public static final String ID_QUARTO_DESCRICAO = "Id único do quarto";
-    public static final String ID_QUARTO_EXEMPLO = "1";
+    public static final String ID_QUARTO_EXEMPLO = "48c3a99d-8d6c-4389-b850-72683ee92c63";
 
     public static final String QTD_CAMA_SOLTEIRO_QUARTO_DESCRICAO = "Quantidade de cama de solteiro";
     public static final String QTD_CAMA_SOLTEIRO_QUARTO_EXEMPLO = "2";
