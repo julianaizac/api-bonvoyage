@@ -19,7 +19,6 @@ import java.util.UUID;
 @Table(name = "TB_HOTEL")
 public class Hotel {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;

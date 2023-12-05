@@ -21,7 +21,7 @@ import static com.facens.apibonvoyage.application.swagger.SwaggerConstantes.*;
 import static com.facens.apibonvoyage.application.swagger.SwaggerConstantes.GET_HOTEL_DESCRIPTION;
 
 @RestController
-@RequestMapping("/hotels")
+@RequestMapping("/hoteis")
 @Tag(name = NOME_CONTROLLER_HOTEL, description = DESCRICAO_CONTROLLER_HOTEL)
 public class HotelController {
 

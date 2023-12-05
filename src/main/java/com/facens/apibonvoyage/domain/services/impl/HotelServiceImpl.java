@@ -3,6 +3,7 @@ package com.facens.apibonvoyage.domain.services.impl;
 import com.facens.apibonvoyage.application.dtos.hotel.HotelDTO;
 import com.facens.apibonvoyage.application.dtos.hotel.HotelInsertDTO;
 import com.facens.apibonvoyage.application.dtos.hotel.HotelUpdateDTO;
+import com.facens.apibonvoyage.application.exceptions.NotFoundException;
 import com.facens.apibonvoyage.domain.entities.Hotel;
 import com.facens.apibonvoyage.application.exceptions.BadRequestException;
 import com.facens.apibonvoyage.domain.factories.HotelFatory;
@@ -37,7 +38,7 @@ public class HotelServiceImpl implements HotelService {
         if(hotel.isPresent()){
             return HotelFatory.createFromEntity(hotel.get());
         } else {
-            throw new BadRequestException(MESSAGE_HOTEL_NOT_FOUND, HttpStatus.NOT_FOUND);
+            throw new NotFoundException(MESSAGE_HOTEL_NOT_FOUND, HttpStatus.NOT_FOUND);
         }
     }
 
