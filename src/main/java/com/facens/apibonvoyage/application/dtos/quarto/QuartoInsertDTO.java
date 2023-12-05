@@ -26,4 +26,6 @@ public class QuartoInsertDTO {
     @Schema(description = CATEGORIA_QUARTO_DESCRICAO, example = CATEGORIA_QUARTO_EXEMPLO)
     private String categoria;
 
+    private Double preco;
+
 }

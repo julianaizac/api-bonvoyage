@@ -20,7 +20,7 @@ import java.util.UUID;
 import static com.facens.apibonvoyage.application.swagger.SwaggerConstantes.*;
 
 @RestController
-@RequestMapping("/hotels/{hotelId}/rooms")
+@RequestMapping("/hoteis/{hotelId}/quartos")
 @Tag(name = NOME_CONTROLLER_QUARTO, description = DESCRICAO_CONTROLLER_QUARTO)
 public class QuartoController {
 

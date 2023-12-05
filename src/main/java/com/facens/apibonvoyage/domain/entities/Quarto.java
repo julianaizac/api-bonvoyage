@@ -5,6 +5,8 @@ import com.facens.apibonvoyage.domain.enums.StatusQuarto;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Builder
@@ -33,5 +35,8 @@ public class Quarto {
     @ManyToOne
     @JoinColumn(name = "hotel_id")
     private Hotel hotel;
+
+    @OneToMany(mappedBy = "quarto")
+    private List<Reserva> reservas = new ArrayList<>();
 
 }

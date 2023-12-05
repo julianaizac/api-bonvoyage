@@ -3,7 +3,9 @@ package com.facens.apibonvoyage.domain.factories;
 import com.facens.apibonvoyage.application.dtos.hotel.HotelDTO;
 import com.facens.apibonvoyage.application.dtos.hotel.HotelInsertDTO;
 import com.facens.apibonvoyage.application.dtos.hotel.HotelUpdateDTO;
+import com.facens.apibonvoyage.application.dtos.hotel.SimpleHotelDTO;
 import com.facens.apibonvoyage.domain.entities.Hotel;
+import com.facens.apibonvoyage.domain.entities.Quarto;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -40,6 +42,27 @@ public class HotelFatory {
                 .endereco(nonNull(dto.getEndereco()) ? dto.getEndereco() : hotel.getNome())
                 .estado(nonNull(dto.getEstado()) ? dto.getEstado() : hotel.getNome())
                 .estrelas(nonNull(dto.getEstrelas()) ? dto.getEstrelas() : hotel.getEstrelas())
+                .build();
+    }
+
+    public static SimpleHotelDTO createSimpleHotelEntity(Hotel hotel) {
+        return SimpleHotelDTO.builder()
+                .id(hotel.getId())
+                .nome(hotel.getNome())
+                .endereco(hotel.getEndereco())
+                .estado(hotel.getEstado())
+                .estrelas(hotel.getEstrelas())
+                .build();
+    }
+
+    public static SimpleHotelDTO createSimpleHotelEntity(Hotel hotel, Quarto quarto) {
+        return SimpleHotelDTO.builder()
+                .id(hotel.getId())
+                .nome(hotel.getNome())
+                .endereco(hotel.getEndereco())
+                .estado(hotel.getEstado())
+                .estrelas(hotel.getEstrelas())
+                .quarto(QuartoFactory.createSimpleQuartoEntity(quarto))
                 .build();
     }
 }

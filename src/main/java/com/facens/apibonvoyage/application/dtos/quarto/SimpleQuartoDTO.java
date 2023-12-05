@@ -2,6 +2,7 @@ package com.facens.apibonvoyage.application.dtos.quarto;
 
 import com.facens.apibonvoyage.domain.enums.CategoriaQuarto;
 import com.facens.apibonvoyage.domain.enums.StatusQuarto;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
@@ -10,10 +11,13 @@ import lombok.Data;
 import java.util.UUID;
 
 import static com.facens.apibonvoyage.application.swagger.SwaggerConstantes.*;
+import static com.facens.apibonvoyage.application.swagger.SwaggerConstantes.ID_HOTEL_QUARTO_EXEMPLO;
 
 @Data
 @Builder
-public class QuartoDTO {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+
+public class SimpleQuartoDTO {
 
     @Schema(description = ID_QUARTO_DESCRICAO, example = ID_QUARTO_EXEMPLO)
     private UUID id;

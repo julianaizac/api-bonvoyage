@@ -2,6 +2,7 @@ package com.facens.apibonvoyage.domain.factories;
 
 import com.facens.apibonvoyage.application.dtos.quarto.QuartoDTO;
 import com.facens.apibonvoyage.application.dtos.quarto.QuartoInsertDTO;
+import com.facens.apibonvoyage.application.dtos.quarto.SimpleQuartoDTO;
 import com.facens.apibonvoyage.domain.entities.Hotel;
 import com.facens.apibonvoyage.domain.entities.Quarto;
 import com.facens.apibonvoyage.domain.enums.CategoriaQuarto;
@@ -17,6 +18,7 @@ public class QuartoFactory {
                 .categoria(quarto.getCategoria())
                 .statusQuarto(quarto.getStatusQuarto())
                 .hotelId(quarto.getHotel().getId())
+                .preco(quarto.getPreco())
                 .build();
     }
 
@@ -28,6 +30,19 @@ public class QuartoFactory {
                 .categoria(CategoriaQuarto.valueOf(dto.getCategoria()))
                 .statusQuarto(StatusQuarto.DISPONIVEL)
                 .hotel(hotel)
+                .preco(dto.getPreco())
+                .build();
+    }
+
+    public static SimpleQuartoDTO createSimpleQuartoEntity(Quarto quarto) {
+        return SimpleQuartoDTO.builder()
+                .id(quarto.getId())
+                .quantidadeCamaSolteiro(quarto.getQuantidadeCamaSolteiro())
+                .quantidadeCamaCasal(quarto.getQuantidadeCamaCasal())
+                .quantidadeBeliche(quarto.getQuantidadeBeliche())
+                .categoria(quarto.getCategoria())
+                .statusQuarto(quarto.getStatusQuarto())
+                .preco(quarto.getPreco())
                 .build();
     }
 }
